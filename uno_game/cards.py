@@ -31,8 +31,8 @@ class Card:
 class UnoCard(Card):
 
     def __init__(self, color, value):
-        self.ALLOWED_COLORS = ["Red", "Blue", "Green", "Yellow", "Black"]
-        self.ALLOWED_VALUES = [str(n) for n in range(10)] + ["R", "S", "D"]
+        self._ALLOWED_COLORS = ["Red", "Blue", "Green", "Yellow", "Black"]
+        self._ALLOWED_VALUES = [str(n) for n in range(10)] + ["R", "S", "D"] + ["Wild", "Wild Draw Four"]
         self.color = color
         self.value = value
 
@@ -43,10 +43,10 @@ class UnoCard(Card):
 
     @color.setter
     def color(self, c):
-        if c in self.ALLOWED_COLORS:
+        if c in self._ALLOWED_COLORS:
             self._color = c
         else:
-            raise ValueError("Color must be one of {}".format(", ".join(self.ALLOWED_COLORS)))
+            raise ValueError("Color must be one of {}".format(", ".join(self._ALLOWED_COLORS)))
 
     @property
     def value(self):
@@ -54,7 +54,7 @@ class UnoCard(Card):
 
     @value.setter
     def value(self, v):
-        if v in self.ALLOWED_VALUES:
+        if v in self._ALLOWED_VALUES:
             self._value = v
         else:
-            raise ValueError("Value must be one of {}".format(", ".join(self.ALLOWED_VALUES)))
+            raise ValueError("Value must be one of {}".format(", ".join(self._ALLOWED_VALUES)))
