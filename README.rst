@@ -1,6 +1,9 @@
 UNO Analyzer
 =============
 
+.. image:: https://travis-ci.org/AliSajid/uno-stats.svg?branch=master
+:target: https://travis-ci.org/AliSajid/uno-stats
+
 This is a small package that can be used to simulate and collect the data about UNO games for an arbitrary number of
 players.
 
